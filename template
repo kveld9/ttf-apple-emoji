@@ -1,0 +1,29 @@
+# Template file for 'ttf-apple-emoji'
+# Based on package from AUR (Arch User Repository) maintained by "gustawho (dmlls)". # https://aur.archlinux.org/packages/ttf-apple-emoji .
+# Package adapted for Void Linux was performed by @kveld9. # https://github.com/kveld9 .
+pkgname=ttf-apple-emoji
+version=17.4
+revision=1
+build_style=meta
+short_desc="Apple Color Emoji is a color typeface used by iOS and macOS to display emoji"
+maintainer="https://github.com/kveld9"
+license="custom"
+homepage="https://github.com/samuelngs/apple-emoji-linux"
+distfiles="https://github.com/samuelngs/apple-emoji-linux/releases/download/v${version}/AppleColorEmoji.ttf file://${XBPS_SRCPKGDIR}/$pkgname/files/75-apple-color-emoji.conf"
+checksum="486dc940bc9b858fdf317f97aa607f04a850481074375551a9af87ea569550f1 f72154069e808e26f1ed800a33cfaba87c268e7e927a3d5987fde0159e341160"
+conflicts="noto-fonts-emoji font-emoji-one-color twemoji"
+
+do_extract() {
+    cd "$wrksrc"
+    cp ${XBPS_SRCDISTDIR}/ttf-apple-emoji-17.4/AppleColorEmoji.ttf .
+    cp ${XBPS_SRCDISTDIR}/ttf-apple-emoji-17.4/75-apple-color-emoji.conf .
+}
+
+do_install() {
+    vmkdir usr/share/fonts/apple-color-emoji
+    vinstall AppleColorEmoji.ttf 644 usr/share/fonts/apple-color-emoji/apple-color-emoji.ttf
+    vmkdir usr/share/fontconfig/conf.avail
+    vinstall "$XBPS_SRCPKGDIR/$pkgname/files/75-apple-color-emoji.conf" 644 usr/share/fontconfig/conf.avail/75-apple-color-emoji.conf
+    vmkdir etc/fonts/conf.d
+    ln -s /usr/share/fontconfig/conf.avail/75-apple-color-emoji.conf ${DESTDIR}/etc/fonts/conf.d/75-apple-color-emoji.conf
+}
