@@ -8,6 +8,7 @@ Apple Emojis adapted for installation via xbps-src for the Void Linux distributi
 4. Move the folder to ```void-packages/srcpkgs```.
 5. Execute ```./xbps-src pkg -j$(nproc) ttf-apple-emoji```. # remember to stay in the void-packages directory.
 6. Install the package by executing ```xi ttf-apple-emoji```.
+7. It is recomendded to execute ```fc-cache -f -v``` to regenerate font cache.
 
 
 ## Credits.
