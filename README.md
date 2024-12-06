@@ -13,5 +13,5 @@ Apple Emojis adapted for installation via xbps-src for the Void Linux distributi
 
 ## Credits.
 - [apple-emoji-linux](https://github.com/samuelngs/apple-emoji-linux)
-- [ttf-apple-emoji](https://aur.archlinux.org/packages/ttf-apple-emoji)
+- [ttf-apple-emoji - AUR](https://aur.archlinux.org/packages/ttf-apple-emoji)
 - [xbps-src](https://github.com/void-linux/void-packages)
