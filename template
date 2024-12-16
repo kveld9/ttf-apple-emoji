@@ -1,6 +1,5 @@
 # Template file for 'ttf-apple-emoji'
 # Based on package from AUR (Arch User Repository) maintained by "gustawho (dmlls)". # https://aur.archlinux.org/packages/ttf-apple-emoji .
-# Package adapted for Void Linux was performed by @kveld9. # https://github.com/kveld9 .
 pkgname=ttf-apple-emoji
 version=17.4
 revision=1
@@ -15,8 +14,7 @@ conflicts="noto-fonts-emoji font-emoji-one-color twemoji"
 
 do_extract() {
     cd "$wrksrc"
-    cp ${XBPS_SRCDISTDIR}/ttf-apple-emoji-17.4/AppleColorEmoji.ttf .
-    cp ${XBPS_SRCDISTDIR}/ttf-apple-emoji-17.4/75-apple-color-emoji.conf .
+    cp ${XBPS_SRCDISTDIR}/ttf-apple-emoji-17.4/* .
 }
 
 do_install() {
